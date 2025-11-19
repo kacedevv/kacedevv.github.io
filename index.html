@@ -3,396 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Ký Nhận Canva EDU Pro 20/11 - Premium Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Đăng Ký Canva EDU - Tri Ân 20/11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
-        /* --- THIẾT LẬP CHUNG --- */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --glass-bg: rgba(255, 255, 255, 0.75); /* Giảm độ đục để trong hơn */
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --text-main: #2d3436;
-            --shadow-soft: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-            --focus-color: #8e44ad;
+            /* Màu chủ đạo 20/11: Đỏ cờ, Vàng kim loại, Xanh than */
+            --primary-color: #C0392B; 
+            --gold-color: #F1C40F;
+            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --text-color: #2c3e50;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* Chống bôi đen văn bản để hạn chế copy */
         body {
-            font-family: 'Poppins', sans-serif;
-            /* Màu nền mượt hơn */
-            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-            background-size: 400% 400%;
-            animation: gradientBG 20s ease infinite; /* Chậm lại cho mượt */
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- HÌNH KHỐI TRANG TRÍ --- */
-        .shape {
-            position: absolute;
-            filter: blur(60px);
-            z-index: 0;
-            opacity: 0.6;
-            animation: float 8s ease-in-out infinite;
-        }
-        .shape-1 {
-            top: -5%;
-            left: -5%;
-            width: 350px;
-            height: 350px;
-            background: #a18cd1;
-            border-radius: 50%;
-        }
-        .shape-2 {
-            bottom: -5%;
-            right: -5%;
-            width: 300px;
-            height: 300px;
-            background: #ff9a9e;
-            border-radius: 50%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-25px) scale(1.05); }
-        }
-
-        /* --- FORM CARD (GLASSMORPHISM) --- */
-        .form-card {
             position: relative;
+            overflow-x: hidden;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+
+        /* Cho phép chọn lại trong ô input để người dùng còn nhập liệu được */
+        input, textarea {
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        /* Hình trang trí nền */
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.15;
+            animation: floatIcon 6s ease-in-out infinite;
+            z-index: 0;
+        }
+        .icon-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .icon-2 { bottom: 10%; right: 10%; animation-delay: 2s; font-size: 4rem; }
+        .icon-3 { top: 20%; right: 20%; animation-delay: 4s; }
+        .icon-4 { bottom: 20%; left: 15%; animation-delay: 1s; }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .form-container {
             width: 100%;
-            max-width: 480px;
+            max-width: 500px;
             background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-radius: 24px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
-            padding: 45px 40px;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px 35px;
             z-index: 1;
-            /* Animation xuất hiện */
-            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            transform: translateY(20px);
             opacity: 0;
-            transform: translateY(30px);
+            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
         @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0); }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        /* --- HEADER --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         .badge {
             display: inline-block;
-            background: linear-gradient(45deg, #FFD700, #FDB931);
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.75em;
+            background: linear-gradient(45deg, #C0392B, #E74C3C);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8em;
             font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(253, 185, 49, 0.4);
+            box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
             margin-bottom: 15px;
         }
 
         h1 {
-            color: var(--text-main);
-            font-size: 2.2em;
+            color: var(--text-color);
+            font-size: 2em;
+            font-weight: 800;
+            line-height: 1.3;
             margin-bottom: 10px;
-            line-height: 1.2;
-            font-weight: 700;
-            background: -webkit-linear-gradient(45deg, #2d3436, #6c5ce7);
+        }
+
+        .h1-highlight {
+            background: linear-gradient(to right, #C0392B, #d35400);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: block;
+            font-size: 1.2em;
         }
 
-        .subheader {
-            color: #636e72;
-            margin-bottom: 35px;
+        .subtitle {
+            color: #7f8c8d;
             font-size: 0.95em;
-            line-height: 1.6;
+            font-weight: 500;
         }
 
-        /* --- INPUT FIELDS --- */
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
+        .form-group { margin-bottom: 20px; }
+        
+        .label-text {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #2d3436;
-            font-size: 0.9em;
-            margin-left: 5px;
-        }
-        
-        .input-wrapper {
-            position: relative;
-            transition: transform 0.2s;
-        }
-        
-        .input-wrapper:focus-within {
-            transform: scale(1.01);
+            color: var(--text-color);
+            font-size: 0.9rem;
         }
 
-        .input-wrapper i {
+        .input-box {
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .input-box i {
             position: absolute;
-            left: 16px;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #b2bec3;
-            font-size: 1.1em;
+            color: #95a5a6;
+            font-size: 1.1rem;
             transition: color 0.3s;
-            z-index: 2;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        input, select, textarea {
             width: 100%;
-            padding: 15px 15px 15px 50px; /* Chừa chỗ cho icon */
-            border: 2px solid transparent;
-            border-radius: 14px;
-            font-size: 1em;
-            font-family: 'Poppins', sans-serif;
-            background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
-            color: #2d3436;
-        }
-
-        .form-group textarea {
-            padding-left: 20px;
-            resize: none;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            background: #fff;
-            border-color: var(--focus-color);
-            outline: none;
-            box-shadow: 0 5px 20px rgba(142, 68, 173, 0.15);
-        }
-
-        .form-group input:focus + i,
-        .form-group select:focus + i {
-            color: var(--focus-color);
-        }
-
-        /* Tùy chỉnh menu dropdown cho đẹp hơn */
-        select {
-            cursor: pointer;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 16px;
-        }
-
-        /* --- CHECKBOX --- */
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 0.9em;
-            color: #636e72;
-            cursor: pointer;
-            margin-top: 10px;
-            padding: 0 5px;
-        }
-        .checkbox-group input {
-            width: 18px;
-            height: 18px;
-            margin-top: 2px;
-            accent-color: var(--focus-color);
-            cursor: pointer;
-        }
-
-        /* --- BUTTON --- */
-        #submitBtn {
-            width: 100%;
-            padding: 16px;
-            margin-top: 25px;
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            border-radius: 14px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 25px rgba(118, 75, 162, 0.3);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.5px;
-        }
-
-        #submitBtn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-            transition: 0.6s;
-        }
-
-        #submitBtn:hover::before {
-            left: 100%;
-        }
-
-        #submitBtn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(118, 75, 162, 0.4);
-        }
-
-        #submitBtn:active {
-            transform: scale(0.98);
-        }
-
-        #submitBtn:disabled {
-            background: #b2bec3;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* --- MESSAGES --- */
-        .success-message, .error-message {
-            margin-top: 25px;
-            padding: 16px;
+            padding: 14px 14px 14px 45px;
+            border: 2px solid #ecf0f1;
             border-radius: 12px;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            color: #2c3e50;
+        }
+
+        textarea { padding-left: 15px; resize: vertical; }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.1);
+        }
+
+        .input-box:focus-within i { color: var(--primary-color); }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .checkbox-wrapper input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #C0392B, #E74C3C);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(192, 57, 43, 0.4);
+        }
+        
+        button:active { transform: scale(0.98); }
+
+        .message-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
             display: none;
-            font-size: 0.95em;
-            animation: fadeIn 0.5s;
+            animation: fadeIn 0.4s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        .success { background: #e8f6f3; color: #27ae60; border: 1px solid #a9dfbf; }
+        .error { background: #fdedec; color: #c0392b; border: 1px solid #fadbd8; }
+
+        /* --- FOOTER CREDIT --- */
+        .footer-credit {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2c3e50;
+            opacity: 0.7;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+            z-index: 1;
+            letter-spacing: 1px;
         }
 
-        .success-message {
-            background: #edfbf6;
-            color: #27ae60;
-            border: 1px solid #a9dfbf;
-        }
-        
-        .error-message {
-            background: #fdedec;
-            color: #c0392b;
-            border: 1px solid #fadbd8;
-        }
-
-        /* --- RESPONSIVE --- */
         @media (max-width: 480px) {
-            .form-card {
-                padding: 35px 25px;
-            }
-            h1 { font-size: 1.8em; }
-            .shape { opacity: 0.4; }
+            .form-container { padding: 30px 20px; }
+            h1 { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
 
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
+    <div class="floating-icon icon-1">🌹</div>
+    <div class="floating-icon icon-2">🎓</div>
+    <div class="floating-icon icon-3">📖</div>
+    <div class="floating-icon icon-4">✨</div>
 
-    <div class="form-card">
-        <div style="text-align: center;">
-            <span class="badge">✨ SPECIAL GIFT 20/11</span>
-            <h1>Canva EDU Pro <br>Miễn Phí</h1>
-            <p class="subheader">Món quà tri ân đặc biệt dành cho Thầy Cô và các bạn Học sinh, Sinh viên.</p>
+    <div class="form-container">
+        <div class="header">
+            <span class="badge">💐 CHÀO MỪNG 20/11</span>
+            <h1>
+                Tri Ân Thầy Cô
+                <span class="h1-highlight">Tặng Canva EDU</span>
+            </h1>
+            <p class="subtitle">Món quà công nghệ ý nghĩa gửi tới Quý Thầy Cô và các bạn học sinh, sinh viên.</p>
         </div>
 
         <form id="canvaForm">
             <div class="form-group">
-                <label>Email đăng ký *</label>
-                <div class="input-wrapper">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="Email" required placeholder="nhapmailcuaban@gmail.com">
+                <label class="label-text">Email nhận tài khoản *</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <input type="email" name="Email" required placeholder="vidu: nguyenvanA@gmail.com">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Họ và Tên</label>
-                <div class="input-wrapper">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" name="Họ tên" placeholder="Nguyễn Văn A">
+                <label class="label-text">Họ và Tên</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <input type="text" name="Họ tên" placeholder="Nhập họ tên đầy đủ của bạn">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Công việc hiện tại</label>
-                <div class="input-wrapper">
-                    <i class="fa-solid fa-chalkboard-user"></i>
+                <label class="label-text">Bạn hiện đang là?</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-user-graduate"></i>
                     <select name="Nghề nghiệp">
-                        <option value="">-- Chọn vai trò của bạn --</option>
-                        <option value="Học sinh">🎓 Học sinh</option>
-                        <option value="Sinh viên">🎒 Sinh viên</option>
-                        <option value="Giáo viên">🍎 Giáo viên</option>
-                        <option value="Giảng viên">🏛️ Giảng viên</option>
-                        <option value="Content Creator">🎨 Content Creator</option>
-                        <option value="Khác">✨ Khác</option>
+                        <option value="">-- Vui lòng chọn --</option>
+                        <option value="Giáo viên">👩‍🏫 Giáo viên (Cô)</option>
+                        <option value="Giáo viên">👨‍🏫 Giáo viên (Thầy)</option>
+                        <option value="Giảng viên">🏛️ Giảng viên ĐH/CĐ</option>
+                        <option value="Học sinh">🎒 Học sinh</option>
+                        <option value="Sinh viên">🎓 Sinh viên</option>
+                        <option value="Giáo dục khác">📚 Cán bộ giáo dục khác</option>
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Mục tiêu sử dụng Canva?</label>
-                <textarea name="Lý do" rows="3" placeholder="Ví dụ: Thiết kế bài giảng, làm thuyết trình, đồ án..."></textarea>
+                <label class="label-text">Lời nhắn gửi / Mục đích sử dụng</label>
+                <textarea name="Lý do" rows="3" placeholder="Bạn muốn dùng Canva để thiết kế bài giảng, làm thiệp 20/11, hay làm bài tập?"></textarea>
             </div>
 
-            <label class="checkbox-group">
+            <label class="checkbox-wrapper">
                 <input type="checkbox" id="subscribe" name="Đồng ý nhận tin" value="Có" checked>
-                <span>Đồng ý nhận thông báo về các tài nguyên giáo dục và ưu đãi mới nhất.</span>
+                <span>Đăng ký nhận thêm các tài nguyên dạy & học miễn phí.</span>
             </label>
 
             <button type="submit" id="submitBtn">
-                <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Đăng Ký Ngay
+                <i class="fa-solid fa-heart" style="margin-right: 8px;"></i> Đăng Ký Nhận Quà
             </button>
 
-            <div id="successMsg" class="success-message">
-                🎉 <strong>Thành công!</strong><br>Hệ thống đã ghi nhận. Vui lòng kiểm tra Email (bao gồm cả mục Spam) để nhận tài khoản nhé!
+            <div id="successMsg" class="message-box success">
+                🎉 <strong>Đăng ký thành công!</strong><br>Chúc mừng 20/11! Vui lòng kiểm tra Email để nhận quà nhé.
             </div>
-            <div id="errorMsg" class="error-message">
-                ⚠️ Có lỗi kết nối. Vui lòng kiểm tra mạng và thử lại!
+            <div id="errorMsg" class="message-box error">
+                ⚠️ Có lỗi xảy ra. Vui lòng thử lại sau!
             </div>
-
         </form>
     </div>
 
+    <div class="footer-credit">
+        Design by KaceDev 2026
+    </div>
+
     <script>
+        // --- ĐOẠN CODE CHẶN F12, CHUỘT PHẢI, CTRL+U ---
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Lỗi rồi');
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                alert('Lỗi rồi');
+                return;
+            }
+
+            // Ctrl + U
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                alert('Lỗi rồi');
+                return;
+            }
+
+            // Ctrl + Shift + I, J, C (Các phím tắt mở DevTools)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) {
+                e.preventDefault();
+                alert('Lỗi rồi');
+                return;
+            }
+        });
+        // ------------------------------------------------
+
         document.getElementById('canvaForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // URL GỐC CỦA BẠN (ĐÃ GIỮ NGUYÊN)
+            // LINK SCRIPT CỦA BÁC (GIỮ NGUYÊN)
             const scriptURL = 'https://script.google.com/macros/s/AKfycbztUJKFMOb3T20466VorRdGFdR9ZOgLLpnQEcCVZ837893laLGQ6LyJgMXDNS3OKMJ1/exec';
             
             const form = e.target;
@@ -400,45 +358,41 @@
             const successMsg = document.getElementById('successMsg');
             const errorMsg = document.getElementById('errorMsg');
             
-            // Chuẩn bị dữ liệu
+            // Xử lý dữ liệu
             const formData = new FormData(form);
             if (!document.getElementById('subscribe').checked) {
                 formData.append('Đồng ý nhận tin', 'Không');
             }
 
-            // Hiệu ứng Loading
+            // Hiệu ứng nút bấm
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Đang gửi đi...';
             successMsg.style.display = 'none';
             errorMsg.style.display = 'none';
 
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
                     if (response.ok) {
-                        // THÀNH CÔNG
+                        // Thành công
                         successMsg.style.display = 'block';
                         form.reset();
-                        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Đã Gửi';
+                        submitBtn.innerHTML = '<i class="fa-solid fa-check-circle"></i> Đã Gửi Thành Công';
                         
-                        // BẮN PHÁO GIẤY (CONFETTI EFFECT)
+                        // Bắn pháo hoa chúc mừng
                         var duration = 3 * 1000;
                         var animationEnd = Date.now() + duration;
-                        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 }; // Tăng zIndex để pháo hoa nổi lên trên
-
-                        function randomInRange(min, max) {
-                          return Math.random() * (max - min) + min;
-                        }
+                        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
 
                         var interval = setInterval(function() {
                           var timeLeft = animationEnd - Date.now();
-
-                          if (timeLeft <= 0) {
-                            return clearInterval(interval);
-                          }
-
+                          if (timeLeft <= 0) return clearInterval(interval);
                           var particleCount = 50 * (timeLeft / duration);
-                          confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-                          confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                          // Bắn ra hoa giấy màu đỏ và vàng (màu cờ)
+                          confetti(Object.assign({}, defaults, { 
+                              particleCount, 
+                              origin: { x: Math.random(), y: Math.random() - 0.2 },
+                              colors: ['#C0392B', '#F1C40F', '#ffffff'] 
+                          }));
                         }, 250);
 
                     } else {
@@ -449,7 +403,7 @@
                     console.error('Error!', error.message);
                     errorMsg.style.display = 'block';
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Thử Lại';
+                    submitBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Thử Lại';
                 });
         });
     </script>
